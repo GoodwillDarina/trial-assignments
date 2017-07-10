@@ -1,9 +1,15 @@
 .breadcrumbs {
-
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.breadcrumbs__items {
-
+.breadcrumbs__item {
+  display: inline-block;
+  &::after {
+    content: '\x2192';
+    display: inline;
+  }
 }
-.breadcrumbs__items-link {
-
+.breadcrumbs__item-link {
+  color: #a2a3a3;
 }
