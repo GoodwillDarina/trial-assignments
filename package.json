@@ -15,6 +15,14 @@
     "gulp": "^3.9.1",
     "gulp-less": "^3.0.5",
     "gulp-postcss": "^6.1.0",
-    "autoprefixer": "^6.3.3"
+    "autoprefixer": "^6.3.3",
+    "add-stream": "^1.0.0",
+    "browser-sync": "^2.2.3",
+    "del": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rigger": "^0.5.8",
+    "path": "^0.12.7",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

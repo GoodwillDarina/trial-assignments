@@ -1,0 +1,16 @@
+/* block layout */
+.layout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.layout-col {
+  flex: 1 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .layout {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
