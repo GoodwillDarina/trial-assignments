@@ -1,0 +1,29 @@
+.tags {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 10px 0;
+
+  list-style: none;
+}
+.tags__item {
+  margin-right: 2.7rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.tags__item-link {
+  color: #006be5;
+  font-size: 1.34rem;
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .tags {
+    padding: 0 13px;
+    margin: 18px 0 12px;
+  }
+}

@@ -1,15 +1,83 @@
 .breadcrumbs {
+  position: relative;
+
+  display: none;
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 .breadcrumbs__item {
+  position: relative;
+
   display: inline-block;
+  padding-right: 30px;
+
   &::after {
-    content: '\x2192';
-    display: inline;
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    right: 6px;
+
+    content: '';
+    display: block;
+    width: 11px;
+    height: 5px;
+    margin: auto;
+
+    background: transparent url('../images/b-arrow.png') no-repeat center;
+  }
+
+  &:last-child{
+    padding-right: 0;
+
+    ::after {
+      display: none;
+    }
   }
 }
 .breadcrumbs__item-link {
+  display: block;
+
   color: #a2a3a3;
+  font-size: 1.2rem;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 999px) {
+  .breadcrumbs {
+    top: -4px;
+
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .breadcrumbs {
+    top: 4px;
+
+    padding: 0 20px;
+  }
+
+  .breadcrumbs__item {
+    padding-right: 25px;
+
+    &:not(:first-child) {
+      padding-left: 4px;
+    }
+
+    &:nth-child(3):not(:last-child) {
+      width: 36px;
+      padding-right: 20px;
+
+      .breadcrumbs__item-link {
+        overflow: hidden;
+
+        line-height: 0.6;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }

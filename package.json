@@ -4,7 +4,12 @@
   "description": "",
   "main": " ",
   "scripts": {
-    "test": " "
+    "test": " ",
+    "build": "gulp",
+    "server:dev": "gulp server:watch",
+    "clean": "rm -rf build/* build.tar.gz",
+    "tar": "tar -czf build.tar.gz build",
+    "package": "npm run clean && npm run build && npm run tar"
   },
   "author": "",
   "license": "",
@@ -21,8 +26,6 @@
     "del": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rigger": "^0.5.8",
-    "path": "^0.12.7",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "path": "^0.12.7"
   }
 }

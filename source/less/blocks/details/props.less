@@ -1,0 +1,75 @@
+.props {
+  max-width: 339px;
+  padding: 15px 22px;
+
+  font-size: 1.35rem;
+  line-height: 1;
+
+  background: #f4f4f4;
+}
+.props__availability {
+  position: relative;
+  padding-left: 28px;
+  margin: 0 0 10px;
+
+  color: #131313;
+
+  &::before {
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+    display: block;
+    width: 14px;
+    height: 10px;
+    margin: auto;
+
+    background: transparent url('../images/success.png') no-repeat center;
+  }
+}
+.props__availability-link {
+  color: #006be5;
+  font-size: 1.35rem;
+  line-height: 1;
+  text-decoration: none;
+}
+.props__delivery {
+  position: relative;
+
+  padding-left: 28px;
+  margin: 0;
+
+  color: #131313;
+
+  &::before {
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+    display: block;
+    width: 17px;
+    height: 13px;
+    margin: auto;
+
+    background: transparent url('../images/delivery.png') no-repeat center;
+  }
+}
+
+
+@media screen and (max-width: 999px) {
+  .props {
+    max-width: 289px;
+    padding: 16px 22px 13px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .props {
+    max-width: none;
+    padding: 16px 15px 13px;
+    margin: 17px 0;
+  }
+}

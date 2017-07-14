@@ -2,8 +2,6 @@ const gulp = require('gulp'),
       less = require('gulp-less'),
       postcss = require('gulp-postcss'),
       autoprefixer = require('autoprefixer'),
-      source = require('vinyl-source-stream'),
-      buffer = require('vinyl-buffer'),
       del = require('del'),
       rigger = require('gulp-rigger'),
       plumber = require('gulp-plumber'),
@@ -30,7 +28,7 @@ gulp.task('default', ['build']);
 function startServer() {
   browserSync({
     server: {
-      baseDir: "./app"
+      baseDir: "./build"
     },
     host: 'localhost',
     port: 3030
@@ -38,12 +36,12 @@ function startServer() {
 }
 
 function clean() {
-  del.sync(['./app']);
+  del.sync(['./build']);
   console.log('[--------] App folder was deleted');
 }
 
 function cleanCss() {
-  del.sync(['./app/styles/**']);
+  del.sync(['./build/styles/**']);
 }
 
 function compileCss() {
@@ -52,26 +50,26 @@ function compileCss() {
       .pipe(postcss([
         autoprefixer({ browsers: ['> 1%', 'IE 9', 'IE 10']})
       ]))
-      .pipe(gulp.dest('./app/css'));
+      .pipe(gulp.dest('./build/css'));
 }
 
 function copyIndex() {
   return gulp.src('./source/index.html')
       .pipe(rigger())
-      .pipe(gulp.dest('./app'))
+      .pipe(gulp.dest('./build'))
       .pipe(reload({stream: true}));
 }
 
 function copyImages() {
   return gulp.src('./source/images/**/*.*')
       .pipe(plumber())
-      .pipe(gulp.dest('./app/images'));
+      .pipe(gulp.dest('./build/images'));
 }
 
 function copyFonts() {
   return gulp.src('./source/fonts/**/*.*')
       .pipe(plumber())
-      .pipe(gulp.dest('./app/fonts'));
+      .pipe(gulp.dest('./build/fonts'));
 }
 
 function watch() {

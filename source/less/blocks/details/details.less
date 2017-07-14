@@ -1,0 +1,93 @@
+@import "tags";
+@import "actions";
+@import "price";
+@import "props";
+
+.details__title {
+  margin: 56px 0 0;
+
+  color: #131313;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.details__description {
+  max-width: 450px;
+  margin: 0;
+
+  color: #131313;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+.details__more {
+  padding: 12px 13px;
+  margin: 24px 0 0;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+}
+.details__more-btn {
+  position: relative;
+
+  display: block;
+  width: 100%;
+
+  color: #131313;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    right: 2px;
+
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: auto;
+
+    background: transparent url('../images/arrow.png') no-repeat center;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .details__title {
+    margin: 19px 0 0;
+
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+  }
+  .details__description {
+    padding-right: 10px;
+
+    letter-spacing: 0.1px;
+  }
+}
+.details__description--mobile-show {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .details__description--mobile-show {
+    display: block;
+  }
+  .details__title--mobile-hide {
+    display: none;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+  .details__description {
+    padding: 2px 16px 0 14px;
+
+    letter-spacing: -0.4px;
+  }
+}
